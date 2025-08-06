@@ -1,6 +1,6 @@
 # 🔍 Function Matching and Analysis with Python
 
-This project implements a complete Python solution to analyze, match, and visualize mathematical functions using CSV data files. The system identifies ideal function fits, evaluates test data, and visualizes everything — storing all results in a local SQLite database.
+This project implements a complete Python solution to analyze, match, and visualize mathematical functions using CSV data files. It identifies ideal function fits, evaluates test data, and visualizes results — storing everything in a local SQLite database.
 
 ---
 
@@ -14,12 +14,12 @@ You are provided with three CSV files:
 
 ### 🧠 What This Project Does
 
-- **Matches training functions** to their best-fitting ideal functions using least squares minimization.
-- **Checks test function values** to see if they fit any of the 4 matched ideal functions.
-- **Stores all data and results** in a local SQLite database (`results.db`).
-- **Generates visualizations** for:
-  - Training vs. matched ideal functions
-  - Test values and their deviation thresholds
+- Matches each training function to its best-fitting ideal function using least squares.
+- For each test point, checks if it can be matched to any of the 4 selected ideal functions based on a deviation threshold.
+- Saves all data, matches, and results to a SQLite database (`results.db`).
+- Generates interactive plots using Bokeh:
+  - Training vs. Ideal functions
+  - Test matches with deviation overlays
 
 ---
 
@@ -39,8 +39,9 @@ You are provided with three CSV files:
 ## 📦 Outputs
 
 - `results.db`: SQLite database storing all datasets and results.
-- `training_vs_ideal.html`: Interactive Bokeh plot of training vs matched ideal functions.
-- `test_matches.html`: Interactive Bokeh plot of test data vs matched ideal functions with deviation bands.
+- `training_vs_ideal.html`: Interactive plot of training vs matched ideal functions.
+- `test_matches.html`: Interactive plot of test points and their deviations.
+- `matched_results.csv`: (Optional) CSV file of test point match results.
 
 ---
 
@@ -49,32 +50,13 @@ You are provided with three CSV files:
 ```bash
 your-project/
 │
-├── main.py                  # Orchestrates the full workflow
-├── data_loader.py           # Loads CSVs
-├── ideal_function_matcher.py # Matches training to ideal functions
-├── deviation_checker.py     # Assigns test points based on deviations
-├── database_handler.py      # Handles SQLite read/write
-├── plotting.py              # Bokeh visualizations
-├── tests/                   # Unit tests for components
+├── main.py                    # Runs the complete pipeline
+├── data_loader.py             # CSV loading
+├── ideal_function_matcher.py  # Function matching logic
+├── deviation_checker.py       # Test point deviation logic
+├── database_handler.py        # SQLite integration
+├── plotting.py                # Bokeh visualizations
+├── tests/                     # Unit tests
 │   ├── test_matcher.py
 │   └── test_deviation.py
-└── README.md                # Project documentation
-
-▶️ How to Run
-1. Add your data files (train.csv, ideal.csv, test.csv) into the project directory.
-
-2. Install dependencies:
-
-```bash
-pip install -r requirements.txt
-
-3. Run the program:
-
-```bash
-python main.py
-
-4. Explore the output:
-
-    Open training_vs_ideal.html and test_matches.html in your browser
-
-    Query the results.db SQLite database
+└── README.md                  # This file
