@@ -41,7 +41,6 @@ You are provided with three CSV files:
 - `results.db`: SQLite database storing all datasets and results.
 - `training_vs_ideal.html`: Interactive plot of training vs matched ideal functions.
 - `test_matches.html`: Interactive plot of test points and their deviations.
-- `matched_results.csv`: (Optional) CSV file of test point match results.
 
 ---
 
@@ -60,3 +59,4 @@ your-project/
 │   ├── test_matcher.py
 │   └── test_deviation.py
 └── README.md                  # This file
+
