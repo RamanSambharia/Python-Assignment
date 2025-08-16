@@ -49,15 +49,6 @@ You are provided with three CSV files:
 ```bash
 project/
 │
-├── main.py                    # Runs the complete pipeline
-├── data_loader.py             
-├── ideal_function_matcher.py  
-├── deviation_checker.py       
-├── database_handler.py        
-├── plotting.py               
-├── tests/                     # Unit tests
-│   ├── test_matcher.py
-│   └── test_deviation.py
 ├── data/                     # csv files
 │   ├── ideal.csv
 │   ├── test.csv
@@ -69,6 +60,14 @@ project/
 │   ├── deviation.py          # Test point deviation logic
 │   ├── matcher.py            # Function matching logic
 │   └── plotter.py            # Bokeh visualizations
+├── tests/                     # Unit tests
+│   ├── test_matcher.py
+│   └── test_deviation.py
+├── utils/                     
+│  └── exception.py
+├── main.py                    # Runs the complete pipeline
+├── requirenments.txt          # Requirnments for running the program   
 └── README.md
+
 
 
