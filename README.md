@@ -47,16 +47,28 @@ You are provided with three CSV files:
 ## 🛠 Project Structure
 
 ```bash
-your-project/
+project/
 │
 ├── main.py                    # Runs the complete pipeline
-├── data_loader.py             # CSV loading
-├── ideal_function_matcher.py  # Function matching logic
-├── deviation_checker.py       # Test point deviation logic
-├── database_handler.py        # SQLite integration
-├── plotting.py                # Bokeh visualizations
+├── data_loader.py             
+├── ideal_function_matcher.py  
+├── deviation_checker.py       
+├── database_handler.py        
+├── plotting.py               
 ├── tests/                     # Unit tests
 │   ├── test_matcher.py
 │   └── test_deviation.py
-└── README.md                  # This file
+├── data/                     # csv files
+│   ├── ideal.csv
+│   ├── test.csv
+│   └── train.csv
+├── models/                     
+│   ├── base.py
+│   ├── data_loader.py        # CSV loading
+│   ├── database.py           # SQLite integration
+│   ├── deviation.py          # Test point deviation logic
+│   ├── matcher.py            # Function matching logic
+│   └── plotter.py            # Bokeh visualizations
+└── README.md
+
 
